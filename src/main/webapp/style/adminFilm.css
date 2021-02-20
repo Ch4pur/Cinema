@@ -1,0 +1,70 @@
+.panel {
+    width: 60%;
+    margin:auto;
+    padding: 20px;
+}
+
+.datetime {
+    width: 60%;
+}
+.datetime * {
+    width: 45%;
+}
+h2,h3 {
+    text-align: center;
+}
+input , textarea{
+    height: 30px;
+    margin: 10px;
+}
+textarea {
+    width: 49%;
+    height: 20%;
+    resize: none;
+    padding: 10px;
+}
+.genres {
+    height: 15%;
+    overflow-y: auto;
+    border: #ffd369 solid 1px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.genres .genre {
+    width: 20%;
+    display: inline-block;
+}
+
+.genre {
+    margin: 10px;
+    text-align: center;
+}
+
+select {
+    height: 30px;
+    width: 100px;
+}
+input[type=submit] {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+input[type=file] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+label {
+    cursor: pointer;
+    color: #ffd369;
+    font-weight: 500;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+label:hover {
+    color: #eeeeee;
+}

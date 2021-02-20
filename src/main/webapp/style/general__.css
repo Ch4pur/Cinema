@@ -1,0 +1,130 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+*::selection {
+    opacity: 0.4;
+    color : #222831;
+    background-color: #ffd369;
+}
+
+*::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #222831;
+}
+
+*::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #ffd369;
+}
+
+body {
+    background-image: url("../image/wallpapers/wallpaper.png");
+}
+
+h1, h2, h3{
+    color : #ffd369;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color : #ffd369;
+    text-decoration: none;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+a:hover {
+    color : #eeeeee;
+}
+
+button , input[type=submit]{
+    cursor: pointer;
+    height: 50px;
+    /*width: 50%;*/
+    border: 10px;
+    border-radius: 30px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 18px;
+    /*background-color: #ffd369;*/
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+button:active, button:focus, input[type=submit]:active, input[type=submit]:focus {
+    outline: none;
+}
+button::-moz-focus-inner, input[type=submit]::-moz-focus-inner {
+    border: 0;
+}
+/*button:hover, input[type=submit]:hover {*/
+/*    background-color: #eeeeee;*/
+/*}*/
+
+hr {
+    border: none;
+    color: #ffd369;
+    background-color: #ffd369;
+    height: 1px;
+}
+
+.toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin: 0;
+    vertical-align: top;
+    background: #ffffff;
+    border: 1px solid #393e46;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+.toggle-button::after {
+    content: "";
+
+    display: inline-block;
+    position: absolute;
+    left: 3px;
+    top: 1.4px;
+
+    width: 25px;
+    height: 25px;
+    background-color: #ffd369;
+    border-radius: 50%;
+
+    transform: translateX(0);
+    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+.toggle-button:checked::after {
+    transform: translateX(calc(100% + 3px));
+    background-color: #eeeeee;
+}
+.toggle-button:checked {
+    background-color: #ffd369;
+}
+
+.panel {
+    border-radius: 5px;
+}
+
+

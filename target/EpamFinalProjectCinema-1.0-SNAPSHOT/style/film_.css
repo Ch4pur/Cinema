@@ -1,0 +1,250 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column1 {
+    width: 23%;
+}
+
+.column3 {
+    width: 28%;
+}
+
+.column1-content, .session-schedule {
+    position: sticky;
+    top: 5%;
+}
+
+.column1-content img, .session-schedule {
+    box-shadow: 0 0 1px 1px #161616;
+}
+
+.column1-content {
+    margin-left: 20%;
+}
+
+.column1 .column1-content .film_image {
+    height: 400px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.edit {
+    text-align: right;
+}
+
+.edit img {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    background-color: #ffd369;
+    border-radius: 5px;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.edit #edit:hover {
+    background-color: #eeeeee;
+}
+
+.edit #delete:hover {
+    background-color: #f15f5f;
+}
+.column2 {
+    width: 40%;
+}
+.info table {
+    width: 100%;
+}
+.age_rating-title {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.age_rating-info {
+    opacity: 0;
+    position: absolute;
+    background-color: #eeeeee;
+    color: #000000;
+    padding: 10px 20px 10px 20px;
+    font-size: 12px;
+    border-radius: 5px;
+    right: 30%;
+    /*margin-left: 15%;*/
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+
+.age_rating:hover .age_rating-info {
+    opacity: 1;
+}
+
+.age_rating:hover {
+    color: #ffd369;
+}
+
+.info-block {
+    text-align: right;
+}
+
+
+.info {
+    padding: 5px 0 5px 0;
+}
+
+.column2-content h1 {
+    font-size: 300%;
+    font-weight: 800;
+    word-spacing: 200%;
+}
+
+p {
+    font-size: 120%;
+}
+
+.session-schedule-content ul li a {
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+
+.comment {
+    padding: 15px;
+}
+
+.comment-author {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffd369;
+    font-size: 16px;
+    display: inline-block;
+
+}
+
+.comment-text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.comment-date {
+    font-family: Helvetica, Arial, sans-serif;
+    display: inline-block;
+    font-size: 12px;
+
+    color: #dddddd;
+}
+
+
+#comment {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 80%;
+    border: 10px #eeeeee;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    height: 100px;
+    resize: none;
+    word-break: break-word;
+}
+
+#make_comment {
+    margin-left: 70%;
+    cursor: pointer;
+    height: 40px;
+    width: 30%;
+    border: 10px;
+    border-radius: 30px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 16px;
+    background-color: #ffd369;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+#make_comment:active, #make_comment:focus {
+    outline: none;
+}
+
+#make_comment::-moz-focus-inner {
+    border: 0;
+}
+
+#make_comment:hover {
+    background-color: #eeeeee;
+}
+
+.session-schedule {
+    box-shadow: 0 0 1px 1px #161616;
+    /*width: 400px;*/
+    min-width: 350px;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    /*order: 3;*/
+    box-sizing: border-box;
+    position: -webkit-sticky;
+    position: sticky;
+    /*right: 0;*/
+    height: calc(100vh - 100px);
+    padding: 5px 10px 5px 10px;
+    z-index: 10;
+    border: 1px #222831;
+    border-radius: 5px;
+    margin-right: 20%;
+    margin-bottom: 20%;
+    min-height: 30%;
+    background-color: #222831;
+}
+
+.session-schedule hr {
+    height: 1px;
+}
+
+.session-schedule-title {
+    text-align: center;
+    font-size: 150%;
+    /*padding: 5%;*/
+    height: 15%;
+}
+
+.session-schedule-content {
+    overflow-y: auto;
+    height: 55%;
+    padding: 0 5% 0 5%;
+}
+
+.session-schedule-content-time {
+    display: inline-block;
+}
+
+.session-schedule-content-time-session_info {
+    text-align: center;
+    padding: 0 20px 0 20px;
+    font-size: 12px;
+    border-radius: 5px;
+    width: 40%;
+    position: absolute;
+    left: 30%;
+    bottom: 20px;
+    opacity: 0;
+    color: #000;
+    background-color: #eeeeee;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.session-schedule-content-time:hover .session-schedule-content-time-session_info {
+    opacity: 1;
+}
+
+.session-schedule-content h3 {
+    color: #eeeeee;
+    font-size: 150%;
+}
+
+

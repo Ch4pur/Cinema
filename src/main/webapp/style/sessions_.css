@@ -1,0 +1,64 @@
+main {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.filter {
+    background-color: #222831;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+    box-shadow: 0 0 1px 1px #161616;
+    margin: 20px 20px 30px;
+
+}
+.sort, .available {
+    margin: 20px;
+}
+.checkboxes {
+    display: inline-block;
+    width: 70%;
+}
+.submit {
+    width: 10%;
+}
+.sessions {
+    width: 100%;
+}
+
+.session-table {
+    overflow-y: auto;
+    width: 100%;
+    text-align: center;
+    border-spacing: 15px;
+}
+.sessions th {
+    background-color: #222831;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px #161616;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+}
+input[type=checkbox] {
+    margin-left: 20px;
+}
+tr * {
+    font-size: 125%;
+}
+tr:nth-child(even) td:nth-child(even) , tr:nth-child(odd) td:nth-child(odd){
+    background-color: #222831;
+    border-radius: 5px;
+}
+tr:nth-child(even) td:nth-child(odd) , tr:nth-child(odd) td:nth-child(even)  {
+    background-color: #ffd369;
+    color: #222831;
+    border-radius: 5px;
+}
+
+tr:nth-child(even) td:nth-child(odd) a, tr:nth-child(odd) td:nth-child(even) a {
+    color: #222831;
+}
+tr:nth-child(even) td:nth-child(odd) a:hover, tr:nth-child(odd) td:nth-child(even) a:hover {
+    color: #eeeeee;
+}

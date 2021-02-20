@@ -1,0 +1,7 @@
+
+q	java:S116"URename this field "SLEEP_TIME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÅÛ±8Ü²º—ø.
+>
+java:S1170"!Make this final field static too.(ÄÅÛ±8û¸¹—ø.
+L
+java:S1128
+"*Remove this unused import 'java.sql.Time'.(Üå»‰şÿÿÿÿ8Ó†ƒû.

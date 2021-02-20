@@ -1,0 +1,11 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+<link href="${pageContext.request.contextPath}/style/general__.css" rel="stylesheet" type="text/css"/>
+<%--<c:if test="${not empty user}">--%>
+<%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/light_theme.css">--%>
+<%--</c:if>--%>
+<%--<c:if test="${empty user }">--%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/dark_theme.css">
+<%--</c:if>--%>

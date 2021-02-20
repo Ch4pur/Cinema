@@ -1,0 +1,89 @@
+input {
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#mail,#phone,#password,#confirm\ password   {
+    width : 80%;
+
+}
+
+.panel {
+    background-color: #222831;
+    width: 30%;
+    min-height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 3px;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.submit {
+    cursor: pointer;
+    height: 50px;
+    width: 50%;
+    border: 10px;
+    margin: 20px;
+    border-radius: 30px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 18px;
+    background-color: #ffd369;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.submit:active, .submit:focus {
+    outline: none;
+}
+.submit::-moz-focus-inner {
+    border: 0;
+}
+.submit:hover {
+    background-color: #eeeeee;
+}
+
+#birthday {
+    cursor: text;
+    text-align: left;
+    width: 45%;
+    color: grey;
+    font-size: 13px;
+}
+#birthday::-webkit-calendar-picker-indicator {
+    padding-right:  20%;
+}
+#birthday::-webkit-date-and-time-value {
+
+    font-family: 'Hind Siliguri', sans-serif;
+}
+#first_name, #last_name {
+    width: 35.5%;
+    height: 30px;
+    padding-left: 10px;
+}
+
+input[required] {
+    background-image: url(../image/icon/requared.png);
+    background-repeat: no-repeat;
+    background-position: 98%;
+    outline: none;
+    border: 0;
+    padding: 5px 10px  5px;
+    background-size: auto 55%;
+}
+
+.help, .name_help {
+    display:none;
+    font-size:80%;
+    color: #ffd369;
+}
+input:focus + .help {
+    display:inline-block;
+}
+#first_name:focus + .name_help, #last_name:focus + .name_help {
+    display: inline-block;
+}
+

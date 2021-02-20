@@ -1,0 +1,22 @@
+.films {
+    margin-left: 5%;
+}
+
+.film-header {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.film-header h1 {
+    text-align: center;
+    font-size: 500%;
+    letter-spacing: 20px;
+    margin: 0 1px 0 1px ;
+}
+
+.film-header h1:after {
+    content: ' ';
+    color: #ffd369;
+    width: 80%;
+}

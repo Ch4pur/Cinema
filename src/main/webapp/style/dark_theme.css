@@ -1,0 +1,32 @@
+body {
+    background-color: #393e46;
+    color : #eeeeee;
+}
+
+.panel {
+    background-color: #222831;
+    box-shadow: 0 0 1px 1px #161616;
+}
+
+h1, h2, h3{
+    color : #ffd369;
+}
+
+
+button , input[type=submit]{
+    background-color: #ffd369;
+}
+button:hover, input[type=submit]:hover {
+    background-color: #eeeeee;
+}
+.menu-toggle {
+    color: #ffd369;
+}
+.menu-toggle:hover {
+    color: #f4f4f4;
+}
+
+.menu {
+    box-shadow: 0 0 1px 1px #161616;
+    background: #222831;
+}

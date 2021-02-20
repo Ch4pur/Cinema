@@ -1,0 +1,23 @@
+
+d
+java:S1192"KDefine a constant instead of duplicating this literal "      <td>" 4 times.(ÿˆé»şÿÿÿÿ
+\
+java:S1192"HDefine a constant instead of duplicating this literal "</td>\n" 5 times.(²éÌ
+`
+java:S1128"LRemove this unused import 'com.example.cinema.db.service.iface.UserService'.(ıùü
+X
+java:S1128">Remove this unused import 'com.example.cinema.db.entity.User'.(¯ŞöU8ÀÔÛâú.
+V
+java:S1128";Remove this unused import 'javax.servlet.ServletException'.(Š‰™Œ8¢ÚÍƒû.
+m
+java:S1128"MRemove this unused import 'com.example.cinema.db.exception.ServiceException'.(Ğì ÷üÿÿÿÿ8Ç‡àâú.
+c
+java:S1128"JRemove this unused import 'com.example.cinema.db.service.UserServiceImpl'.(Õ­¿¯ûÿÿÿÿ
+K
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¥ìÿâú.
+i
+java:S1128"NRemove this unused import 'com.example.cinema.db.service.iface.TicketService'.(ÜÚ¤„8İÛŞâú.
+g
+java:S1128"LRemove this unused import 'com.example.cinema.db.service.TicketServiceImpl'.(á†Ü•8İÛŞâú.
+J
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8×Åíâú.

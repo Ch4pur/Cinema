@@ -1,0 +1,4 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dosis&family=Hind+Siliguri:wght@300&family=Karla:wght@300;400&display=swap"
+      rel="stylesheet">
+<link href="${pageContext.request.contextPath}/style/general.css" rel="stylesheet" type="text/css"/>

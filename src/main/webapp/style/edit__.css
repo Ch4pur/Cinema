@@ -1,0 +1,22 @@
+.panel {
+    width: 25%;
+    height: 70%;
+    background-color: #222831;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px #161616;
+    text-align: center;
+    padding: 50px;
+    margin: 5% auto auto;
+    /*padding-top: 80px ;*/
+}
+input {
+    margin: 10px;
+    width: 80%;
+    height: 35px;
+}
+input[type=submit] {
+    margin-top: 30px;
+    /*width: 100%;*/
+    /*bottom: 5px;*/
+    /*height: 50px;*/
+}

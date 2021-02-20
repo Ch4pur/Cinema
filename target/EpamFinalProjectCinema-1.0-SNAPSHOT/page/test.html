@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Hind+Siliguri:wght@300&family=Karla:wght@300;400&display=swap"
+          rel="stylesheet">
+    <link href="../style/general_.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/film_.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="main">
+    <div class="column1">
+        <div class="column1-content">
+            <img src="../image/film/spider-man-into-the-spider-verse.jpg" alt="film image" class="film_image"/>
+            <div class="edit" style="text-align: right">
+                <img id="edit" src="../image/icon/pencil.png"/>
+                <img id="delete" src="../image/icon/bucket.png"/>
+            </div>
+        </div>
+    </div>
+    <div class=" column2" id="column2">
+        <div class="column2-content">
+            <h1>Spider Man</h1>
+            <div class="info">
+                <table>
+                    <tr>
+                        <td><h3>Producer</h3></td>
+                        <td class="info-block"><p>producer</p></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Max allowable age</h3></td>
+                        <td class="info-block">
+                            <div class="age_rating">
+                                <p class="age_rating-title"> ${ageRating.getTitle()}</p>
+                                <div class="age_rating-info">
+                                    <p>Min allowable age: ${ageRating.getMinAge()}</p>
+                                    <p>
+                                        You can go with elders
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h3>Genres:</h3></td>
+                        <td>
+                            <p class="info-block">
+                                ${genre},${genre},${genre},${genre},${genre}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h3>Release date</h3></td>
+                        <td class="info-block"><p>01.01.2001</p></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Duration</h3></td>
+                        <td class="info-block"><p>01:30:00</p></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="description">
+                <p>
+                    Summaries.
+                    Teen Miles Morales becomes the Spider-Man of his universe, and must join with five
+                    spider-powered
+                    individuals from other dimensions to stop a threat for all realities. ...
+                    Then he is bitten by a radioactive spider and he obtains certain powers, similar to those of
+                    Spiderman.
+                </p>
+            </div>
+        </div>
+
+        <div class="comment-field">
+            <h2>Comments (1)</h2>
+
+            <form action="" method="post">
+                <input name="command" value="addComment" id="comment-toggle" hidden>
+                <input name="filmId" value="${film.getId()}" hidden>
+                <textarea name="comment" id="comment" placeholder="Write comment here..." minlength="5"
+                          maxlength="50"
+                          cols="10" required></textarea>
+                <br/>
+                <button type="submit" name="make_comment" id="make_comment">Comment</button>
+            </form>
+
+            <div class="comments">
+
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">${comment.getAuthor().getMail()}</div>
+                        <div class="comment-date">${comment.getDateOfWriting()}</div>
+                    </div>
+                    <div class="comment-text">
+                        ${comment.getContent()}
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">${comment.getAuthor().getMail()}</div>
+                        <div class="comment-date">${comment.getDateOfWriting()}</div>
+                    </div>
+                    <div class="comment-text">
+                        ${comment.getContent()}
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">${comment.getAuthor().getMail()}</div>
+                        <div class="comment-date">${comment.getDateOfWriting()}</div>
+                    </div>
+                    <div class="comment-text">
+                        ${comment.getContent()}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column3" id="column3">
+        <div class="session-schedule">
+            <div class="session-schedule-title">
+                <h2>Session schedule</h2>
+            </div>
+
+            <hr>
+            <div class="session-schedule-content">
+                <div style="margin-top: 10px">
+                    <h3>${date}</h3>
+                    <div style="text-align: center">
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/not-3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/not-3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="margin-top: 10px">
+                    <h3>${date}</h3>
+                    <div style="text-align: center">
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/not-3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/not-3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div style="margin-top: 10px">
+                    <h3>${date}</h3>
+                    <div style="text-align: center">
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/not-3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                        <div class="session-schedule-content-time">
+                            <a href="">23:00:00</a>
+                            <div class="session-schedule-content-time-session_info">
+                                <p>Seats: 10/10</p>
+                                <img src="../image/icon/not-3d-glasses.png" height="40" width="40"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+.main {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+button {
+    margin: 20px;
+}
+.main div {
+    margin: 20px;
+    background-color: #222831;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+}
+
+.general-info-content  {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+}
+
+general-info-coins {
+    width : 20%;
+}
+
+.general-info-content p , .personal-info p {
+    display: inline-block;
+    margin : auto 40px auto 40px;
+}
+ {
+    display: inline-block;
+}
+.general-info-content button {
+    width: 35%;
+}
+
+button{
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 20%;
+    height: 35px;
+    background-color: #ffd369;
+    border-radius: 20px;
+    border: 6px;
+    color: #222831;
+    cursor: pointer;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 16px;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+button:active, button:focus {
+    outline: none;
+}
+button::-moz-focus-inner {
+    border: 0;
+}
+
+button:hover {
+    background-color: #eeeeee;
+}
+
+.authorize {
+    height: 50px;
+    width: 60%;
+}
+
+.tickets-table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.tickets-table th {
+    font-weight: 500;
+    font-size: 150%;
+}
+
+.tickets-table td {
+    font-size: 120%;
+    padding-top: 5px;
+}
