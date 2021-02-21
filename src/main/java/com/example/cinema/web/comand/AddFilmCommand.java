@@ -27,7 +27,7 @@ class AddFilmCommand implements Command {
     private static final Logger LOG = Logger.getLogger(AddFilmCommand.class);
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException, TransactionException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException, TransactionException, ServletException{
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         if (user == null || !user.isAdmin()) {
@@ -52,32 +52,35 @@ class AddFilmCommand implements Command {
                     .setTitle(request.getParameter("filmTitle"))
                     .setProducersName(request.getParameter("producer"))
                     .setReleaseDate(Date.valueOf(request.getParameter("releaseDate")))
-                    .setDuration(Time.valueOf(request.getParameter("duration") + ":00"))
                     .setDescription(request.getParameter("description"))
                     .setGenre(filmGenres);
-
+            if (!(request.getParameter("duration") + ":00").equals("00:00")) {
+                film.setDuration(Time.valueOf(request.getParameter("duration") + ":00"));
+            }
             AgeRating ageRating = filmService.getAgeRatingByTitle(request.getParameter("ageRating"));
 
             film.setAgeRating(ageRating);
             Part filmImage = request.getPart("image-file");
 
             if (!filmImage.getSubmittedFileName().isEmpty()) {
+                LOG.info("Get image file -> " + filmImage.getSubmittedFileName());
                 if (!getFileExtension(filmImage.getSubmittedFileName()).equals("jpg")) {
                     session.setAttribute("exception", "Wrong file extension");
                     return request.getContextPath() + Pages.ADD_FILM_PAGE;
                 }
 
                 filmImage.write(programPath + filmImage.getSubmittedFileName());
+                LOG.info("Write image file to the project");
                 film.setImagePath(filmImage.getSubmittedFileName());
             }
-
+            LOG.info("Get edited film -> " + film);
             filmService.addFilm(film);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (ServiceException e) {
-            e.printStackTrace();
+            LOG.error("Can`t add the film "+ e);
+            throw new CommandException(e.getMessage(), e);
+        } catch (IOException e) {
+            LOG.error("Error with downloading file -> " + e);
+            throw new ServletException(e);
         }
         return request.getContextPath() + Pages.MAIN;
     }

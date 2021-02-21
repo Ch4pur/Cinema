@@ -4,7 +4,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="ctl" uri="/WEB-INF/customTagLib" %>
-
+<%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 
 <!DOCTYPE html>
 <html lang="${lang}">
@@ -76,9 +76,10 @@
 
 </div>
 
-<script src="${pageContext.request.contextPath}/splide-2.4.21/dist/js/splide.min.js"></script>
-<script src="${pageContext.request.contextPath}/script/slider.js"></script>
-<script src="${pageContext.request.contextPath}/script/languageMenu.js"></script>
+<tag:slider-script />
+<%--<script src="${pageContext.request.contextPath}/splide-2.4.21/dist/js/splide.min.js"></script>--%>
+<%--<script src="${pageContext.request.contextPath}/script/slider.js"></script>--%>
+<%--<script src="${pageContext.request.contextPath}/script/languageMenu.js"></script>--%>
 
 </body>
 </html>

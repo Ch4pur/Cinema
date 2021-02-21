@@ -28,8 +28,9 @@ import java.util.Set;
 
 public class EditFilmCommand implements Command {
     private static final Logger LOG = Logger.getLogger(EditFilmCommand.class);
+
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws TransactionException, CommandException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws TransactionException, CommandException, ServletException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
@@ -41,7 +42,7 @@ public class EditFilmCommand implements Command {
 
         try {
             int filmId = Integer.parseInt(request.getParameter("film_id"));
-
+            LOG.info("Get film id -> " + filmId);
             String programPath = request.getServletContext().getRealPath("/image/film/");
 
             Set<Genre> genres = filmService.getAllGenres();
@@ -55,37 +56,37 @@ public class EditFilmCommand implements Command {
                     .setTitle(request.getParameter("filmTitle"))
                     .setProducersName(request.getParameter("producer"))
                     .setReleaseDate(Date.valueOf(request.getParameter("releaseDate")))
-                    .setDuration(Time.valueOf(request.getParameter("duration") + ":00"))
                     .setDescription(request.getParameter("description"))
                     .setGenre(filmGenres);
-
+            if (!(request.getParameter("duration") + ":00").equals("00:00")) {
+                film.setDuration(Time.valueOf(request.getParameter("duration") + ":00"));
+            }
             AgeRating ageRating = filmService.getAgeRatingByTitle(request.getParameter("ageRating"));
 
             film.setAgeRating(ageRating);
             Part filmImage = request.getPart("image-file");
 
             if (!filmImage.getSubmittedFileName().isEmpty()) {
-                System.out.println(getFileExtension(filmImage.getSubmittedFileName()));
+                LOG.info("Get image file -> " + filmImage.getSubmittedFileName());
                 if (!getFileExtension(filmImage.getSubmittedFileName()).equals("jpg")) {
+                    LOG.warn("Wrong file extension");
                     session.setAttribute("exception", "Wrong file extension");
                     return request.getContextPath() + Pages.EDIT_FILM_PAGE + filmId;
                 }
 
                 filmImage.write(programPath + filmImage.getSubmittedFileName());
+                LOG.info("Write image file to the project");
                 film.setImagePath(filmImage.getSubmittedFileName());
             }
-
+            LOG.info("Get edited film -> " + film);
             filmService.updateFilm(film);
+            return request.getContextPath() + Pages.FILM + filmId;
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new ServletException(e);
         } catch (ServiceException e) {
-            e.printStackTrace();
-        } catch (ServletException e) {
-            e.printStackTrace();
+            throw new CommandException(e.getMessage(), e);
         }
-        return request.getContextPath() + Pages.MAIN;
     }
-
     private String getFileExtension(String fileName) {
         return fileName.substring(fileName.indexOf(".") + 1);
     }

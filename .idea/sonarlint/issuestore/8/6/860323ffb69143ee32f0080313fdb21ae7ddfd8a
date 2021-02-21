@@ -1,7 +1,7 @@
 
 j
 java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ðúÿÿÿÿ
-q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ðúÿÿÿÿ8ÿ‡½‡ú.
 P
 java:S1128"4Remove this unused import 'org.apache.log4j.Logger'.(ñè½8ò½íùû.
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ðúÿÿÿÿ8ÿ‡½‡ú.

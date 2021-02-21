@@ -311,3 +311,11 @@ i
 9src/test/java/com/example/cinema/db/dao/GenreDAOTest.java,8\e\8ed0f01aecc184b7dfd7f12038658f6afe2e6603
 k
 ;src/test/java/com/example/cinema/db/dao/CommentDAOTest.java,1\b\1b1a12aaeba51bdf0cc1231a33d94e4942605b30
+h
+8src/test/java/com/example/cinema/db/dao/FilmDAOTest.java,a\5\a5429a37a7859ad24c34c21237eaf9896d526f8a
+k
+;src/test/java/com/example/cinema/db/dao/SessionDAOTest.java,7\d\7d45a1e2749b021a1c1854d4d602d5f75c6768e9
+j
+:src/test/java/com/example/cinema/db/dao/TicketDAOTest.java,a\9\a9f4c2f3ecc77b5cc56e2b86ad01e6640baac830
+h
+8src/test/java/com/example/cinema/db/dao/UserDAOTest.java,e\d\ed95cf1835a97bfa859c2aaebb645a901cc32280
