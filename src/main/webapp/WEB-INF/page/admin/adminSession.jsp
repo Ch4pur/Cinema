@@ -80,6 +80,6 @@
     </div>
 </div>
 <script src = "${pageContext.request.contextPath}/script/3dButton.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/script/sessionDate_.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/script/sessionDate.js"></script>
 </body>
 </html>

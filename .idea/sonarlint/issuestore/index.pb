@@ -294,8 +294,6 @@ U
 %src/main/webapp/WEB-INF/page/film.jsp,a\e\ae0db33558bef1a7a597bce243d231ef4c3e1086
 ]
 -src/main/webapp/WEB-INF/page/orderReceipt.jsp,1\5\154c54468eb1e0157ed9ef23d66c435dec06550f
-T
-$src/main/webapp/WEB-INF/log/logs.log,9\e\9e42751203cd6c6b8b01bdf838f71e588b704882
 R
 "src/main/webapp/style/general_.css,3\8\38109af1ead0d85bdb69d7507764d8d83108f00a
 O
