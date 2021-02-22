@@ -33,7 +33,11 @@ class CreateReceiptPageCommand implements Command {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         List<Ticket> tickets = new ArrayList<>();
-
+        //можно зайти только зарегистрированному пользователю
+        if (user == null) {
+            LOG.warn("Unauthorized login attempt");
+            throw new CommandException("Trying to get on " + request.getRequestURI() + " from not admin");
+        }
         session.removeAttribute("tickets");
         session.removeAttribute("total");
         try {

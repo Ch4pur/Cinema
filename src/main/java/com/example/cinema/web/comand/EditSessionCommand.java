@@ -26,7 +26,7 @@ public class EditSessionCommand implements Command {
         LOG.info("Current URI -> " + request.getRequestURI());
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
+        //только админ может изменть сеанс
         if (user == null || !user.isAdmin()) {
             LOG.warn("Unauthorized login attempt");
             throw new CommandException("Trying to get on " + request.getRequestURI() + " from not admin");
@@ -40,7 +40,7 @@ public class EditSessionCommand implements Command {
         LOG.info("Get session id -> " + sessionId);
         Session filmSession = null;
         try {
-            Timestamp dateTime = Timestamp.valueOf(request.getParameter("date") + " " + request.getParameter("time") + ":00");
+            Timestamp dateTime = Timestamp.valueOf(request.getParameter("date") + " " + request.getParameter("time").substring(0,5) + ":00");
             boolean threeD = request.getParameter("threeD") != null;
             filmSession = sessionService.getSessionById(sessionId)
                     .setFullDate(dateTime)

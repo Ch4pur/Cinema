@@ -132,6 +132,8 @@ public class SessionServiceImpl implements SessionService {
         }
     }
 
+    //получение кол-ва сеансов всех фильмов
+    //хранение в мапе (id фильма, кол-во сеансов)
     @Override
     public Map<Integer, Integer> getNumberOfSessionsOfAllFilms() throws ServiceException, TransactionException {
         LOG.info("Getting number of sessions starts");
@@ -154,6 +156,8 @@ public class SessionServiceImpl implements SessionService {
         }
     }
 
+    //получение сесансов сгруппрованных по датам
+    //хранится в мапе(дата сенса, сенса отсортированные по времени показа)
     @Override
     public Map<String, List<Session>> getFilmSessionsGroupedByDate(Film film) throws ServiceException, TransactionException {
         LOG.info("Getting session grouped by date starts");
@@ -164,6 +168,7 @@ public class SessionServiceImpl implements SessionService {
             Map<String, List<Session>> res = new LinkedHashMap<>();
             for (Session session : sessions) {
                 String date = session.getDate().toString();
+
                 if (!res.containsKey(date)) {
                     res.put(date, new ArrayList<>());
                 }
@@ -171,6 +176,7 @@ public class SessionServiceImpl implements SessionService {
             }
             LOG.info("Unsorted sessions map -> " + res);
             res = sortByDate(res);
+            //сортировка по времени
             res.values().forEach(times -> times.sort(Comparator.comparing(Session::getTime)));
             LOG.info("Sessions map sorted by date -> " + res);
             LOG.info("Getting sessions grouped by date has been finished");
@@ -196,9 +202,10 @@ public class SessionServiceImpl implements SessionService {
         LOG.info("Sorted by date map -> " + entries);
         LOG.info("Finish sort by date");
         return entries.stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> y, LinkedHashMap::new));
-
     }
 
+    //создание листа кол-во рядов х кол-во сидений
+    // где все сиденья свободные
     private List<List<Ticket>> createEmptyHall() {
         List<List<Ticket>> ticketList = new ArrayList<>();
         for (int i = 0; i < Session.NUMBER_OF_ROWS; i++) {
@@ -211,6 +218,8 @@ public class SessionServiceImpl implements SessionService {
         return ticketList;
     }
 
+    // получения состояний каждого места по id сеанса
+    // если id тикета в листе равен -1, то сиденье свободно
     @Override
     public List<List<Ticket>> getSeatsById(int id) throws ServiceException, TransactionException {
         LOG.info("Start get seats by sessions id -> " + id);
@@ -242,17 +251,24 @@ public class SessionServiceImpl implements SessionService {
         }
     }
 
-    @Override
-    public Time getEndTimeOfSession(Session session) {
+    //получение конца сенанса
+    private Time getEndTimeOfSession(Session session) {
         LOG.info("Start getting endtime of the session -> " + session);
+//        System.out.println(session);
         long startingOfFilm = session.getFullDate().getTime();
         long filmDuration = session.getFilm().getDuration().getTime();
+        //время на рекламу
         long addTime = Time.valueOf("00:20:00").getTime();
+        //время промежутка между сенсами
         long sessionGap = Time.valueOf("00:20:00").getTime();
+        //при каждом суммировании времен результат становиться равным на timeZoneOffset времени дольше
+        // правильного
+        //  поэтому отмимается timeZoneOffset от результата столько раз, сколько было произведено суммирование
         long timeZoneOffset = -(Time.valueOf("00:00:00").getTime());
 
         Time res = new Time(startingOfFilm + filmDuration + addTime + sessionGap + timeZoneOffset * 3);
         LOG.info("Got time -> " + res);
+//        System.out.println("End -> " + res);
         return res;
     }
 
@@ -261,14 +277,18 @@ public class SessionServiceImpl implements SessionService {
         LOG.info("Adding session starts");
         try (Transaction transaction = Transaction.createTransaction()) {
 
+            //сеанс добавить нельзя, если
+            //дата сеанса в прошедшем времени
             if (isInThePast(newSession)) {
                 LOG.warn("Session date is in the past -> " + newSession.getDate());
                 throw new ServiceException("session date is in the past");
             }
+            //дата находится вне промежутка рабочего дня (9:00 - 22:00)
             if (isOutOfTime(newSession)) {
                 LOG.warn("Session outside the cinema working time -> " + newSession.getDate());
                 throw new ServiceException("Session outside the cinema working time");
             }
+            //дата попадает в промежуток другого сеанса
             if (!isFittedInTime(newSession, getSessionsByDate(newSession.getDate()))) {
                 LOG.warn("Another session is in progress during this one -> " + newSession);
                 throw new ServiceException("Another session is in progress during this one");
@@ -285,14 +305,19 @@ public class SessionServiceImpl implements SessionService {
     private boolean isFittedInTime(Session session, Set<Session> oldSessions) {
         LOG.info("Start checking does session affect the other`s schedule");
         Session buff = null;
+        //если сенсов в этот день нет, то дата точно не попадает в чужие рамки
         if (oldSessions == null || oldSessions.isEmpty()) {
             return true;
         }
 
         for (Session sessionWithTheSameDate : oldSessions) {
             if (buff == null) {
+                System.out.println("session 1 time -> " + sessionWithTheSameDate.getTime() + " - " + getEndTimeOfSession(sessionWithTheSameDate));
+                System.out.println("newSessions time ->" + session.getTime() + " - " + getEndTimeOfSession(session));
                 LOG.info("session 1 time -> " + sessionWithTheSameDate.getTime() + " - " + getEndTimeOfSession(sessionWithTheSameDate));
                 LOG.info("newSessions time ->" + session.getTime() + " - " + getEndTimeOfSession(session));
+                //если конец нового сеанса до начала существующего, учитывая что сеанс попал в рабочее время
+                // то его можно добавить
                 if (getEndTimeOfSession(session).toLocalTime().isBefore(sessionWithTheSameDate.getTime().toLocalTime())) {
                     return true;
                 }
@@ -300,6 +325,9 @@ public class SessionServiceImpl implements SessionService {
                 LOG.info("session 1 time -> " + buff.getTime() + " - " + getEndTimeOfSession(buff));
                 LOG.info("newSessions time ->" + session.getTime() + " - " + getEndTimeOfSession(session));
                 LOG.info("session 2 time -> " + sessionWithTheSameDate.getTime() + " - " + getEndTimeOfSession(sessionWithTheSameDate));
+                System.out.println("----------------------------------------------------------");
+                // если начало нового сеанса после конца предидущего и конец - перед следущего
+                // то его можно добавить
                 if (getEndTimeOfSession(buff).toLocalTime().isBefore(session.getTime().toLocalTime()) &&
                         getEndTimeOfSession(session).toLocalTime().isBefore(sessionWithTheSameDate.getTime().toLocalTime())) {
                     return true;
@@ -308,7 +336,12 @@ public class SessionServiceImpl implements SessionService {
             buff = sessionWithTheSameDate;
         }
         LOG.info("Checking fit in time has been finished");
-        return getEndTimeOfSession(buff).toLocalTime().isBefore(session.getTime().toLocalTime());
+        // если конец самого позднего существующего сеанса до начала нового
+        // и если конец последний больше начала (22:00 - 00:00. при этом полночь раньше любого сеанса, но
+        // это означает что больше сеансов на этот день добавить нельзя)
+        // то можно добавить
+        return getEndTimeOfSession(buff).toLocalTime().isAfter(buff.getTime().toLocalTime())
+                && getEndTimeOfSession(buff).toLocalTime().isBefore(session.getTime().toLocalTime());
     }
 
     private boolean isInThePast(Session session) {
@@ -334,6 +367,7 @@ public class SessionServiceImpl implements SessionService {
         }
     }
 
+    // идет проверка на совместимость по времени, как и в методе добавления
     @Override
     public void updateSession(Session session) throws ServiceException, TransactionException {
         LOG.info("Updating the session with id " + session.getId() + " starts -> " + session);

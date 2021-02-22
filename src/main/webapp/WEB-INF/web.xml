@@ -6,21 +6,21 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/page/error/error404.jsp</location>
+        <location>/WEB-INF/page/error/error404.jsp</location>
     </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/page/error/error500.jsp</location>
-    </error-page>
+
     <error-page>
         <exception-type>java.lang.NullPointerException</exception-type>
-        <location>/page/error/error404.jsp</location>
+        <location>/WEB-INF/page/error/error404.jsp</location>
     </error-page>
     <error-page>
         <exception-type>java.lang.NumberFormatException</exception-type>
-        <location>/page/error/error404.jsp</location>
+        <location>/WEB-INF/page/error/error404.jsp</location>
     </error-page>
-
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/page/error/error500.jsp</location>
+    </error-page>
     <listener>
         <listener-class>com.example.cinema.web.listener.LogListener</listener-class>
     </listener>

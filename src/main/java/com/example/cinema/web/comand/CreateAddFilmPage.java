@@ -26,7 +26,7 @@ class CreateAddFilmPage implements Command{
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
+        //
         if (user == null || !user.isAdmin()) {
             LOG.warn("Unauthorized login attempt");
             throw new CommandException("Trying to get on " + request.getRequestURI() + " from not admin");
@@ -42,7 +42,6 @@ class CreateAddFilmPage implements Command{
             request.setAttribute("genres", genres);
             request.setAttribute("ageRatings", ageRatings);
         } catch (ServiceException e) {
-            e.printStackTrace();
             LOG.error("Can`t create page " + e);
             throw new CommandException(e.getMessage(),e);
         }

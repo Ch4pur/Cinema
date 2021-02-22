@@ -11,6 +11,9 @@
 
 </head>
 <body>
+<c:if test="${not empty user}">
+    <c:redirect url="${Pages.MAIN}"/>
+</c:if>`
 <div class="panel">
     <h1><fmt:message key="registration.registration"/></h1>
     <p style="margin-bottom: 5px"><fmt:message key="registration.everythingStartsHere"/></p>
@@ -49,6 +52,6 @@
         <br/>
     </form>
 </div>
-<script src="${pageContext.request.contextPath}/script/date_.js"></script>
+<script src="${pageContext.request.contextPath}/script/date.js"></script>
 </body>
 </html>

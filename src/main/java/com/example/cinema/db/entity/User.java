@@ -137,8 +137,6 @@ public class User extends Entity {
         res.append("Role: ").append(isAdmin ? "Admin" : "User").append(System.lineSeparator());
 
         res.append("BirthDay: ").append(birthday).append(System.lineSeparator());
-        res.append("Id: ").append(getId()).append(System.lineSeparator());
-        res.append("Password: ").append(password).append(System.lineSeparator());
         return res.toString();
     }
 
@@ -165,7 +163,7 @@ public class User extends Entity {
                 getId() == other.getId() :
                 this.mail.equals(other.mail) && this.password.equals(other.password);
     }
-
+    //метод хеширования пароля
     private static String hash(String password, byte[] salt) {
         if (password == null || password.length() == 0)
             throw new IllegalArgumentException("Empty passwords are not supported.");
@@ -185,7 +183,7 @@ public class User extends Entity {
         }
         return Base64.encodeBase64String(key.getEncoded());
     }
-
+    //метод получения хешированного пароля
     public static String getSaltedHash(String password) {
         byte[] salt = new byte[0];
         try {
@@ -196,7 +194,7 @@ public class User extends Entity {
 
         return Base64.encodeBase64String(salt) + "$" + hash(password, salt);
     }
-
+    //метод проверки равенства обычного и хешированного паролей
     public static boolean check(String password, String stored) {
         String[] saltAndPass = stored.split("\\$");
         if (saltAndPass.length != 2) {

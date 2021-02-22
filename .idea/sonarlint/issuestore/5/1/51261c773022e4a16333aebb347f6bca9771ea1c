@@ -1,7 +1,7 @@
 
-i
-java:S1128"LRemove this unused import 'com.example.cinema.db.service.iface.UserService'.(ıùü8îÒ¶û.
-l
-java:S1128	"JRemove this unused import 'com.example.cinema.db.service.UserServiceImpl'.(Õ­¿¯ûÿÿÿÿ8îÒ¶û.
-l
-java:S1192'"JDefine a constant instead of duplicating this literal "curr_page" 3 times.(Ê•Ñ¶şÿÿÿÿ8Ôß¦•ú.
+g
+java:S1128"LRemove this unused import 'com.example.cinema.db.service.iface.UserService'.(ıùü8îÒ¶û.
+j
+java:S1192"JDefine a constant instead of duplicating this literal "curr_page" 3 times.(Ê•Ñ¶şÿÿÿÿ8Ôß¦•ú.
+j
+java:S1128"JRemove this unused import 'com.example.cinema.db.service.UserServiceImpl'.(Õ­¿¯ûÿÿÿÿ8îÒ¶û.

@@ -134,10 +134,9 @@ public class UserServiceImpl implements UserService {
             LOG.info("Bank transaction has been finished");
             userFromDB.setCoins(userFromDB.getCoins() + coins);
             userDao.update(userFromDB);
-//            userDao.updateCoinsById(userFromDB.getCoins() + coins, userId);
             transaction.commit();
             LOG.info("Adding coins has to " + userFromDB + " been finished");
-        } catch (DAOException e) {
+        } catch (DAOException | IllegalArgumentException e) {
             LOG.error("Can`t add coins " + e);
             transaction.rollback();
             throw new ServiceException("You have limit of coins", e);
@@ -155,9 +154,8 @@ public class UserServiceImpl implements UserService {
             LOG.info("Got user -> " + userFromDB);
             userFromDB.setCoins(userFromDB.getCoins() - coins);
             userDao.update(userFromDB);
-            //userDao.updateCoinsById(userFromDB.getCoins() - coins, userId);
             LOG.info("Deduction has been finished");
-        } catch (DAOException e) {
+        } catch (DAOException | IllegalArgumentException e) {
             LOG.error("Can`t deduct coins ", e);
             throw new ServiceException("You have not enough money", e);
         }

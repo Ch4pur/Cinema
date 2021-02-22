@@ -1,0 +1,33 @@
+.panel {
+    width: 40%;
+    /*height: 77%;*/
+    margin:  auto;
+    padding: 10px 20px 10px 20px;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+.tickets {
+    padding: 10px;
+    margin-top: 10px;
+    height: 50%;
+    overflow-y: auto;
+    /*background-color: #393e46;*/
+    border-radius: 5px;
+    border: 1px #ffd369 solid;
+
+}
+
+.no-money-buttons {
+    text-align: center;
+    width: 100%;
+}
+.no-money-buttons button {
+    width: 25%;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}

@@ -30,3 +30,35 @@ button:hover, input[type=submit]:hover {
     box-shadow: 0 0 1px 1px #161616;
     background: #222831;
 }
+
+a {
+    color : #ffd369;
+}
+
+a:hover {
+    color : #eeeeee;
+}
+
+hr {
+    border: none;
+    color: #ffd369;
+    background-color: #ffd369;
+    height: 1px;
+}
+.menu > ul > li > a:after {
+    background: #ffd369;
+}
+.menu > ul > li > a:hover:before {
+    background: #ffd369;
+}
+
+.open-button {
+    background-color: #222831;
+}
+
+.open-content--show {
+    background-color: #222831;
+}
+.open-content {
+    background-color: #222831;
+}

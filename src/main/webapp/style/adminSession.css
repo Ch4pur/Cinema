@@ -1,0 +1,44 @@
+.panel {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.occupied_dates {
+    border-radius: 5px;
+    border: 1px #ffd369 solid;
+    width: 80%;
+    height: 40%;
+    overflow-y: auto;
+    margin: auto;
+    text-align: left;
+    padding: 10px 20px 10px 20px ;
+}
+.date {
+    width: 70% ;
+    text-align: center;
+    margin: 20px auto auto;
+}
+.date * {
+    width: 45%;
+    height: 30px;
+    margin: auto;
+}
+
+input[type=submit] {
+    width: 50%;
+}
+.toggle-button {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.edit_delete {
+    width: 70%;
+}
+
+.edit_delete * {
+    width: 45%;
+    display: inline-block;
+}

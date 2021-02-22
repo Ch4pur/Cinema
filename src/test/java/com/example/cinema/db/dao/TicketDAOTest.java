@@ -583,6 +583,41 @@ public class TicketDAOTest extends AbstractDAOTest {
 
         Assert.assertEquals(expected,firstTicket.getPrice());
     }
+
+    @Test
+    public void ticketDAO_get_all() throws DAOException {
+        AgeRating ageRating = new AgeRating();
+        Film film = new Film();
+        Session session = new Session();
+        User user = new User();
+        createSupportingTables(ageRating, film, session, user);
+        Ticket firstTicket = new Ticket()
+                .setSession(session)
+                .setCustomer(user)
+                .setPlaceColumn(1)
+                .setPlaceRow(1)
+                .setOrderDate(Date.valueOf("2000-01-01"))
+                .setId(1);
+        Ticket secondTicket = new Ticket()
+                .setSession(session)
+                .setCustomer(user)
+                .setPlaceColumn(1)
+                .setPlaceRow(2)
+                .setOrderDate(Date.valueOf("2000-01-01"))
+                .setId(2);
+        Set<Ticket> expected = new LinkedHashSet<>();
+
+        ticketDAO.add(firstTicket);
+        ticketDAO.add(secondTicket);
+        expected.add(firstTicket);
+        expected.add(secondTicket);
+
+        Set<Ticket> actual = ticketDAO.getAll();
+        actual.forEach(ticket -> ticket.setCustomer(user).setSession(session));
+
+        Assert.assertEquals(expected, actual);
+    }
+
     @After
     public void clearTables() {
         super.clearTables(

@@ -10,9 +10,6 @@ public abstract class Entity implements Serializable {
         id = -1;
     }
 
-    protected Entity(int id) {
-        this.id = id;
-    }
 
     public int getId() {
         return id;

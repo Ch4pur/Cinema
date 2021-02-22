@@ -33,15 +33,15 @@ public class EditFilmCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws TransactionException, CommandException, ServletException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
+        //только админ может редактировать сеанс
         if (user == null || !user.isAdmin()) {
             LOG.warn("Unauthorized login attempt");
             throw new CommandException("Trying to get on " + request.getRequestURI() + " from not admin");
         }
         FilmService filmService = new FilmServiceImpl();
-
+        int filmId = 0;
         try {
-            int filmId = Integer.parseInt(request.getParameter("film_id"));
+            filmId = Integer.parseInt(request.getParameter("film_id"));
             LOG.info("Get film id -> " + filmId);
             String programPath = request.getServletContext().getRealPath("/image/film/");
 
@@ -58,9 +58,6 @@ public class EditFilmCommand implements Command {
                     .setReleaseDate(Date.valueOf(request.getParameter("releaseDate")))
                     .setDescription(request.getParameter("description"))
                     .setGenre(filmGenres);
-            if (!(request.getParameter("duration") + ":00").equals("00:00")) {
-                film.setDuration(Time.valueOf(request.getParameter("duration") + ":00"));
-            }
             AgeRating ageRating = filmService.getAgeRatingByTitle(request.getParameter("ageRating"));
 
             film.setAgeRating(ageRating);
@@ -84,7 +81,8 @@ public class EditFilmCommand implements Command {
         } catch (IOException e) {
             throw new ServletException(e);
         } catch (ServiceException e) {
-            throw new CommandException(e.getMessage(), e);
+            session.setAttribute("exception", e.getMessage());
+            return request.getContextPath() + Pages.EDIT_FILM_PAGE + filmId;
         }
     }
     private String getFileExtension(String fileName) {

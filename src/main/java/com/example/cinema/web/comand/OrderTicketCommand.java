@@ -36,8 +36,8 @@ public class OrderTicketCommand implements Command {
             LOG.info("Add ticket");
         } catch (ServiceException e) {
               session.setAttribute("exception", e.getMessage());
-              return Pages.TICKET_ORDER_PANEL+ tickets.get(0).getSession().getId();
+              return request.getContextPath() + Pages.TICKET_ORDER_PANEL+ tickets.get(0).getSession().getId();
         }
-        return Pages.MAIN;
+        return request.getContextPath() + Pages.MAIN;
     }
 }

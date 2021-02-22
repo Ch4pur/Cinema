@@ -25,30 +25,42 @@ class AuthorizeCookieCommand implements Command {
         UserService userService = new UserServiceImpl();
         Cookie[] cookies = request.getCookies();
         LOG.info("Get cookies");
+        String mail = "";
+        String password = "";
+        //в куки хранятся почта и пароль
         for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("user_id")) {
-                try {
-                    LOG.info("Find user cookie");
-                    HttpSession session = request.getSession();
-
-                    User user = userService.getUserById(Integer.parseInt(cookie.getValue()));
-                    LOG.info("Get user ->" + user);
-                    if (user == null) {
-                        LOG.warn("User from cookie was deleted");
-                        Cookie cookie1 = new Cookie("user_id", "");
-                        cookie1.setMaxAge(0);
-                        response.addCookie(cookie1);
-                        return Pages.LOGGING_JSP;
-                    }
-                    session.setAttribute("user", user);
-                    LOG.info("Set user to session");
-                } catch (ServiceException e) {
-                    LOG.error("Can`t authorize user");
-                    throw new CommandException(e.getMessage(), e);
-                }
-                return Pages.MAIN;
+            if (cookie.getName().equals("user_mail")) {
+                mail = cookie.getValue();
+            }
+            if (cookie.getName().equals("user_password")) {
+                password = cookie.getValue();
             }
         }
-        return Pages.LOGGING_JSP;
+        try {
+            LOG.info("Find user cookie");
+            HttpSession session = request.getSession();
+
+            User user = userService.getUserByMail(mail);
+            LOG.info("Get user ->" + user);
+            //валидация на юзера
+            if (user != null && password.equals(user.getPassword())) {
+                session.setAttribute("user", user);
+                LOG.info("Set user to session");
+                return Pages.MAIN;
+            }
+            LOG.warn("User from cookie was deleted");
+            //если куки неправильные, то они удаляются.
+            Cookie deletingCookieMail = new Cookie("user_mail", "");
+            Cookie deletingCookiePassword = new Cookie("user_password", "");
+            deletingCookieMail.setMaxAge(0);
+            deletingCookiePassword.setMaxAge(0);
+            response.addCookie(deletingCookieMail);
+            response.addCookie(deletingCookiePassword);
+
+            return Pages.LOGGING_JSP;
+        } catch (ServiceException e) {
+            LOG.error("Can`t authorize user");
+            throw new CommandException(e.getMessage(), e);
+        }
     }
 }

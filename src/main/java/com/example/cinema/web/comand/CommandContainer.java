@@ -15,11 +15,12 @@ public final class CommandContainer {
 
     static {
         LOG.info("Start initializing command container");
+        //команды авторизации
         commands.put("login" , new LoginCommand());
         commands.put("register", new RegisterCommand());
         commands.put("logout", new LogoutCommand());
         commands.put("cookies", new AuthorizeCookieCommand());
-
+        //команды создания страниц
         commands.put("createFilmsPage", new CreateFilmsPageCommand());
         commands.put("createFilmPage", new CreateFilmPageCommand());
         commands.put("createReceiptPage", new CreateReceiptPageCommand());
@@ -29,23 +30,22 @@ public final class CommandContainer {
         commands.put("createProfile", new CreateProfilePageCommand());
         commands.put("createTicketPanel", new CreateTicketPanelCommand());
         commands.put("createAddFilmPage", new CreateAddFilmPage());
-
+        //команда работы с комментариями
         commands.put("addComment" , new AddCommentCommand());
         commands.put("deleteComment", new DeleteCommentCommand());
-
+        //команда изменения данных пользователя
         commands.put("editProfile", new EditProfileCommand());
-
+        //команда заказа билетов
         commands.put("orderTicket", new OrderTicketCommand());
-
+        //команда работы на фильмом
         commands.put("addFilm", new AddFilmCommand());
         commands.put("editFilm", new EditFilmCommand());
         commands.put("deleteFilm", new DeleteFilmCommand());
-
+        //команды работы над сеансом
         commands.put("addSession", new AddSessionCommand());
         commands.put("deleteSession" , new DeleteSessionCommand());
         commands.put("editSession" , new EditSessionCommand());
 
-        commands.put("test", new TestCommand());
         LOG.info("Initializing container has been finished");
     }
 

@@ -13,7 +13,7 @@ function checkLimit(checkbox) {
     let inputs = document.querySelectorAll("input[type='checkbox']");
     for (let i = 0; i < inputs.length; i++) {
         if (!inputs[i].checked) {
-            inputs[i].disabled = numberOfSelected >= 6;
+            inputs[i].disabled = numberOfSelected > 5;
         }
     }
 }

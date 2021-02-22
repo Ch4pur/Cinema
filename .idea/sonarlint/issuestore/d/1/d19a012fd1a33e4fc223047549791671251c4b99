@@ -1,34 +1,34 @@
 
-T
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(ζΓ§ƒόÿÿÿÿ8Κάƒεω.
-\
-java:S1128"ARemove this unused import 'com.example.cinema.db.entity.Session'.(ΛΙΟ½8ƒήγ―ϋ.
-m
-java:S1128"MRemove this unused import 'com.example.cinema.db.service.SessionServiceImpl'.(„¨ίςψÿÿÿÿ8ƒήγ―ϋ.
-E
-java:S1128"*Remove this unused import 'java.sql.Date'.(Ωΐ½Κ8Κάƒεω.
-m
-java:S1128"MRemove this unused import 'com.example.cinema.db.exception.ServiceException'.(Πμ χόÿÿÿÿ8ƒήγ―ϋ.
 c
 java:S1128"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ςΝΎώÿÿÿÿ8¬ν°ϋ.
-j
-java:S1128"JRemove this unused import 'com.example.cinema.db.service.FilmServiceImpl'.(Χµιωÿÿÿÿ8Κάƒεω.
-o
-java:S1128"ORemove this unused import 'com.example.cinema.db.service.iface.SessionService'.(‡΄Ψέωÿÿÿÿ8ƒήγ―ϋ.
-l
-java:S1128"LRemove this unused import 'com.example.cinema.db.service.iface.FilmService'.(σ™ρ®ώÿÿÿÿ8Κάƒεω.
-g
-java:S1128"LRemove this unused import 'com.example.cinema.db.service.TicketServiceImpl'.(α†ά•8ƒήγ―ϋ.
-i
-java:S1128"NRemove this unused import 'com.example.cinema.db.service.iface.TicketService'.(άΪ¤„8ƒήγ―ϋ.
-I
-java:S1128"/Remove this unused import 'java.sql.Timestamp'.(θς½+8Κάƒεω.
+[	java:S125"<This block of commented-out lines of code should be removed.(‚Σλÿÿÿÿÿ8ί†°ϋ.
 g
 java:S1128"GRemove this unused import 'java.security.spec.InvalidKeySpecException'.(λσΕλόÿÿÿÿ8¬ν°ϋ.
+\
+java:S1128"ARemove this unused import 'com.example.cinema.db.entity.Session'.(ΛΙΟ½8ƒήγ―ϋ.
+l
+java:S1128"LRemove this unused import 'com.example.cinema.db.service.iface.FilmService'.(σ™ρ®ώÿÿÿÿ8Κάƒεω.
+j
+java:S1128"JRemove this unused import 'com.example.cinema.db.service.FilmServiceImpl'.(Χµιωÿÿÿÿ8Κάƒεω.
+E
+java:S1128"*Remove this unused import 'java.sql.Date'.(Ωΐ½Κ8Κάƒεω.
+T
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(ζΓ§ƒόÿÿÿÿ8Κάƒεω.
+g
+java:S1128"LRemove this unused import 'com.example.cinema.db.service.TicketServiceImpl'.(α†ά•8ƒήγ―ϋ.
 q
 java:S1128"QRemove this unused import 'com.example.cinema.db.exception.TransactionException'.(φήή ϊÿÿÿÿ8ζΧƒζω.
-L
-java:S1128",Remove this unused import 'java.time.Month'.(¤‚Ιψÿÿÿÿ8Κάƒεω.
+I
+java:S1128"/Remove this unused import 'java.sql.Timestamp'.(θς½+8Κάƒεω.
+m
+java:S1128"MRemove this unused import 'com.example.cinema.db.exception.ServiceException'.(Πμ χόÿÿÿÿ8ƒήγ―ϋ.
 `
 java:S1128"@Remove this unused import 'com.example.cinema.db.entity.Ticket'.(¦Ωθ ύÿÿÿÿ8ƒήγ―ϋ.
-[	java:S125"<This block of commented-out lines of code should be removed.(‚Σλÿÿÿÿÿ8ί†°ϋ.
+L
+java:S1128",Remove this unused import 'java.time.Month'.(¤‚Ιψÿÿÿÿ8Κάƒεω.
+i
+java:S1128"NRemove this unused import 'com.example.cinema.db.service.iface.TicketService'.(άΪ¤„8ƒήγ―ϋ.
+m
+java:S1128"MRemove this unused import 'com.example.cinema.db.service.SessionServiceImpl'.(„¨ίςψÿÿÿÿ8ƒήγ―ϋ.
+o
+java:S1128"ORemove this unused import 'com.example.cinema.db.service.iface.SessionService'.(‡΄Ψέωÿÿÿÿ8ƒήγ―ϋ.

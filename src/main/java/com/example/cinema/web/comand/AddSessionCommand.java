@@ -32,6 +32,7 @@ public class AddSessionCommand implements Command {
         LOG.info("Current URI -> " + request.getRequestURI());
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        //только админ может добавлять сеанс
         if (user == null || !user.isAdmin()) {
             LOG.warn("unauthorized user");
             throw new CommandException("unauthorized user");

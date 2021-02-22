@@ -10,6 +10,9 @@
     <title>Maxinema - ${title}</title>
 </head>
 <body>
+<c:if test="${not empty user}">
+    <c:redirect url="${Pages.MAIN}"/>
+</c:if>
 <div class="panel">
     <h2><fmt:message key="logging.LogIn"/></h2>
     <p><fmt:message key="logging.signIn"/></p>

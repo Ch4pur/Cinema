@@ -30,10 +30,11 @@ class AddCommentCommand implements Command {
         LOG.info("Adding comment starts");
         User user = (User) session.getAttribute("user");
         LOG.info("Get author -> " + user);
+        //неавторизированному пользователю нельзя писать комментарий
         if (user == null) {
             LOG.warn("Unregister guest try to make a comment");
             session.setAttribute("exception", "you must to authorize/register to make a comment");
-            return request.getContextPath()  + Pages.LOGGING_JSP;
+            return request.getContextPath()  + Pages.AUTHORIZATION;
         }
         CommentService commentService = new CommentServiceImpl();
         FilmService filmService = new FilmServiceImpl();

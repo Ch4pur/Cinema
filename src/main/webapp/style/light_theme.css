@@ -1,31 +1,66 @@
 body {
-    background-color: #fff5c0;
-    color : #000000;
+    background-color: #eeeeee;
+    color : #393e46;
 }
 
 .panel {
-    background-color: #ff8585;
-    box-shadow: 0 0 1px 1px #ff4646;
+    background-color: #ffd369;;
+    box-shadow: 0 0 1px 1px #222831;
 }
 
 h1, h2, h3{
-    color : #ff4646;
+    color : #222831;
 }
 
 button , input[type=submit]{
-    background-color: #ff4646;
+    color : #eeeeee;
+    background-color: #222831;
 }
 button:hover, input[type=submit]:hover {
-    background-color: #fff5c0;
-}
-.menu-toggle {
-    color: #ff4646;
-}
-.menu-toggle:hover {
-    color: #fff5c0;
+    background-color: #eeeeee;
+    color: #222831;
 }
 
+a {
+    color : #222831;
+}
+
+a:hover {
+    color : #eeeeee;
+}
+
+hr {
+    color: #222831;
+    background-color: #222831;
+}
+/*---------menu---------------*/
+.menu > ul > li > a:before {
+    background-color: #222831;
+}
+.menu > ul > li > a:hover:before {
+    background: #222831;
+}
+.menu-toggle {
+    color: #222831;
+}
+.menu-toggle:hover {
+    color: #222831;
+}
+.menu > ul > li > a:after {
+    background: #222831;
+}
 .menu {
-    /*box-shadow: 0 0 1px 1px #161616;*/
-    background: #ff4646;
+    box-shadow: 0 0 1px 1px #222831;
+    background: #ffd369;
+}
+/*-----------main----------*/
+.open-button {
+    background-color: #ffd369;
+}
+.open-content--show {
+    background-color: #ffd369;
+}
+
+.open-content {
+    background-color: #ffd369;
 }

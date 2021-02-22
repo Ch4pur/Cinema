@@ -5,7 +5,7 @@
 <html>
 <head>
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf" %>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/edit__.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/edit.css">
     <c:set var="title" scope="page"><fmt:message key="edit.title"/></c:set>
     <title>Maxinema - ${title}</title>
 </head>

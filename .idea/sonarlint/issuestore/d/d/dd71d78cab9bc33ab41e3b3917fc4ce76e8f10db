@@ -1,7 +1,7 @@
 
-i
-java:S1192"LDefine a constant instead of duplicating this literal "sortBySeats" 3 times.(û‚Ş¹8È“¢Úù.
-l
-java:S1192 "JDefine a constant instead of duplicating this literal "available" 3 times.(å›­•ÿÿÿÿÿ8“¥¢Úù.
-h
-java:S1192"KDefine a constant instead of duplicating this literal "sortByDate" 3 times.(ª¯­£8§È Úù.
+f
+java:S1192"KDefine a constant instead of duplicating this literal "sortByDate" 3 times.(ª¯­£8§È Úù.
+g
+java:S1192"LDefine a constant instead of duplicating this literal "sortBySeats" 3 times.(û‚Ş¹8È“¢Úù.
+j
+java:S1192"JDefine a constant instead of duplicating this literal "available" 3 times.(å›­•ÿÿÿÿÿ8“¥¢Úù.

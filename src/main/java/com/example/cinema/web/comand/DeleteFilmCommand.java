@@ -21,7 +21,7 @@ public class DeleteFilmCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws TransactionException, CommandException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
+        //только админ может удалять фильм
         if (user == null || !user.isAdmin()) {
             LOG.warn("Unauthorized login attempt");
             throw new CommandException("Trying to get on " + request.getRequestURI() + " from not admin");

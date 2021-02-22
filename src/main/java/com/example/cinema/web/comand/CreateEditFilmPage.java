@@ -27,6 +27,7 @@ public class CreateEditFilmPage implements Command {
         LOG.info("Current URI -> " + request.getRequestURI());
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        //заходить на данную страничку может только админ
         if (user == null || !user.isAdmin()) {
             LOG.warn("Unauthorized login attempt");
             throw new CommandException("Trying to get on " + request.getRequestURI() + " from not admin");

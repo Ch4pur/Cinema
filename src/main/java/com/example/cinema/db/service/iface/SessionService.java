@@ -28,7 +28,15 @@ public interface SessionService {
 
     List<List<Ticket>> getSeatsById(int id) throws ServiceException, TransactionException;
 
-    Time getEndTimeOfSession(Session session) throws ServiceException, TransactionException;
+//    static Time getEndTimeOfSession(Session session) {
+//        long startingOfFilm = session.getFullDate().getTime();
+//        long filmDuration = session.getFilm().getDuration().getTime();
+//        long addTime = Time.valueOf("00:20:00").getTime();
+//        long sessionGap = Time.valueOf("00:20:00").getTime();
+//        long timeZoneOffset = -(Time.valueOf("00:00:00").getTime());
+//
+//        return new Time(startingOfFilm + filmDuration + addTime + sessionGap + timeZoneOffset * 3);
+//    }
 
     void addSession(Session session) throws ServiceException, TransactionException;
     void deleteSession(Session session) throws ServiceException, TransactionException;

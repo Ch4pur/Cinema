@@ -18,9 +18,13 @@ class LogoutCommand implements Command {
         HttpSession session = request.getSession();
         session.invalidate();
         LOG.info("Invalidate session");
-        Cookie cookieRemove = new Cookie("user_id", "");
-        cookieRemove.setMaxAge(0);
-        response.addCookie(cookieRemove);
+        //при выходе очищаем куки
+        Cookie deletingCookieMail = new Cookie("user_mail", "");
+        Cookie deletingCookiePassword = new Cookie("user_password", "");
+        deletingCookieMail.setMaxAge(0);
+        deletingCookiePassword.setMaxAge(0);
+        response.addCookie(deletingCookieMail);
+        response.addCookie(deletingCookiePassword);
         LOG.info("Clean cookie");
 
         return Pages.MAIN;

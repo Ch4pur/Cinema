@@ -3,6 +3,7 @@ package com.example.cinema.web.listener;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.io.File;
@@ -14,7 +15,8 @@ public class LogListener implements ServletContextListener {
         LOG.info("Starting configure context");
         try {
 
-            String homeDir= sce.getServletContext().getRealPath("/");
+            String homeDir= sce.getServletContext().getRealPath("");
+            System.setProperty("app.root", homeDir);
             File propertiesFile=new File(homeDir,"WEB-INF/log4j.properties");
             PropertyConfigurator.configure(propertiesFile.toString());
             LOG.info("Log4j has been initialized");

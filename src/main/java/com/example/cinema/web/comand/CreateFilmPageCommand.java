@@ -38,6 +38,7 @@ class CreateFilmPageCommand implements Command {
         try {
             int id = Integer.parseInt(request.getParameter("film_id"));
             LOG.info("Get film id -> " + id);
+            //пагинация страницы
             int currentPage = request.getParameter("curr_page") == null? 0 : Integer.parseInt(request.getParameter("curr_page"));
             LOG.info("Get current pagination page -> " + currentPage);
             Film film = filmService.getFilmById(id);

@@ -12,7 +12,6 @@ import com.example.cinema.db.exception.ServiceException;
 import com.example.cinema.db.exception.TransactionException;
 import com.example.cinema.db.service.iface.SessionService;
 import com.example.cinema.db.service.iface.TicketService;
-import com.example.cinema.db.service.iface.UserService;
 import org.apache.log4j.Logger;
 
 
@@ -25,7 +24,6 @@ public class TicketServiceImpl implements TicketService {
     private final DAOFactory factory = MyDAOFactory.getInstance();
 
     private final SessionService sessionService = new SessionServiceImpl();
-    private final UserService userService = new UserServiceImpl();
 
     private TicketDAO ticketDao;
     private UserDAO userDao;
@@ -40,17 +38,17 @@ public class TicketServiceImpl implements TicketService {
             transaction.startTransaction();
 
             for (Ticket ticket : tickets) {
+                //при добавлении билета параллельно вычитается валюта с баланса пользователя, который заказал билет
                 ticketDao.add(ticket);
                 User user = userDao.getById(ticket.getCustomer().getId());
                 LOG.info("Customer of ticket -> " + ticket + " is " + user);
                 user.setCoins(user.getCoins() - ticket.getPrice());
                 userDao.update(user);
-                //userDao.updateCoinsById(user.getCoins() - ticket.getPrice(), ticket.getCustomer().getId());
             }
 
             transaction.commit();
             LOG.info("Tickets have been bought");
-        } catch (DAOException e) {
+        } catch (DAOException | IllegalArgumentException e) {
             LOG.error("Can`t add tickets " + e);
             transaction.rollback();
             throw new ServiceException("Unfortunately, some of the selected tickets have already been purchased", e);
@@ -67,7 +65,6 @@ public class TicketServiceImpl implements TicketService {
             ticketDao = factory.getTicketDao(transaction.getConnection());
             userDao = factory.getUserDAO(transaction.getConnection());
             Set<Ticket> tickets = ticketDao.getSetBySession(session);
-
             for (Ticket ticket : tickets) {
                 ticket.setSession(session);
                 ticket.setCustomer(userDao.getById(ticketDao.getCustomerId(ticket.getId())));

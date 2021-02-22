@@ -26,6 +26,7 @@ class EditProfileCommand implements Command {
         HttpSession session = request.getSession();
         user = (User) session.getAttribute("user");
         try {
+            //editing - что именно надо изменять пользователю
             switch (editing.toUpperCase(Locale.ROOT)) {
                 case "NAME":
                     changeName(request);

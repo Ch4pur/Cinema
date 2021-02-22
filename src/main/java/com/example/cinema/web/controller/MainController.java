@@ -1,6 +1,7 @@
 package com.example.cinema.web.controller;
 
 import com.example.cinema.db.exception.CommandException;
+import com.example.cinema.db.exception.ServiceException;
 import com.example.cinema.db.exception.TransactionException;
 import com.example.cinema.web.comand.Command;
 import com.example.cinema.web.comand.CommandContainer;
@@ -30,7 +31,6 @@ public class MainController extends HttpServlet {
             LOG.error("Can`t execute command " + e);
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         } catch (CommandException e) {
-
             LOG.error("Can`t execute command " + e);
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
         }

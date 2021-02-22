@@ -132,8 +132,10 @@ public class FilmServiceImpl implements FilmService {
             filmDao = factory.getFilmDao(transaction.getConnection());
             genreDao = factory.getGenreDao(transaction.getConnection());
 
-
+            //добавление нового фильма
             filmDao.add(film);
+            film = filmDao.getByTitle(film.getTitle()).setGenre(film.getGenres());
+            //установка жанров в БД
             setGenresToFilm(film,film.getGenres());
 
         } catch (DAOException e) {

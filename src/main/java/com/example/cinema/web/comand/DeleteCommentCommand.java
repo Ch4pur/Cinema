@@ -23,8 +23,6 @@ class DeleteCommentCommand implements Command {
         LOG.info("Current URI -> " + request.getRequestURI());
 
         CommentService commentService = new CommentServiceImpl();
-
-
         try {
             int commentId = Integer.parseInt(request.getParameter("comment_id"));
             LOG.info("Get comment id -> " + commentId);

@@ -24,14 +24,17 @@ class LoginCommand implements Command {
         UserService userService = new UserServiceImpl();
         try {
             User user = userService.getUserByMail(request.getParameter("mail"));
+            //проверка на правильность почты и пароля
             if (user == null || !(User.check(request.getParameter("password"), user.getPassword()))) {
                 LOG.warn("Incorrect mail/password");
                 session.setAttribute("exception", "Incorrect mail/password");
                 return request.getContextPath() + Pages.LOGGING_JSP;
             }
+            //если был выбран чекбокс с remember me, то записываем почту и пароль для последующего захода
             if (request.getParameter("remember") != null) {
                 LOG.info("Set cookie");
-                response.addCookie(new Cookie("user_id", Integer.toString(user.getId())));
+                response.addCookie(new Cookie("user_mail", user.getMail()));
+                response.addCookie(new Cookie("user_password", user.getPassword()));
             }
             session.setAttribute("user", user);
         }  catch (ServiceException e) {
