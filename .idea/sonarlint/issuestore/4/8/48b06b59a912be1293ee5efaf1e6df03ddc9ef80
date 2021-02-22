@@ -1,9 +1,7 @@
 
-f
-java:S2095#"IUse try-with-resources or close this "Transaction" in a "finally" clause.(õ¿¡Ÿ8…û×¦ü.
-„
-java:S1192J"bDefine a constant instead of duplicating this literal "Getting tickets has been finished" 3 times.(ßª‰ıÿÿÿÿ8…û×¦ü.
 p
-java:S1192M"SDefine a constant instead of duplicating this literal "Can`t get tickets " 3 times.(æÔÍó8…û×¦ü.
-i
-java:S1128"LRemove this unused import 'com.example.cinema.db.service.iface.UserService'.(ıùü8…û×¦ü.
+java:S1192L"SDefine a constant instead of duplicating this literal "Can`t get tickets " 3 times.(æÔÍó8…û×¦ü.
+„
+java:S1192I"bDefine a constant instead of duplicating this literal "Getting tickets has been finished" 3 times.(ßª‰ıÿÿÿÿ8…û×¦ü.
+f
+java:S2095""IUse try-with-resources or close this "Transaction" in a "finally" clause.(õ¿¡Ÿ8…û×¦ü.

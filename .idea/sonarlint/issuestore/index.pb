@@ -81,8 +81,6 @@ u
 Esrc/main/java/com/example/cinema/db/dao/implementation/TicketDao.java,7\4\7444cf90c3ab9f7a32d2776cb78d46f43b0e3e0b
 p
 @src/main/java/com/example/cinema/web/comand/RegisterCommand.java,4\3\43b89c2e0c3e46b3645cbfcf0ede101af3825b1c
-l
-<src/main/java/com/example/cinema/web/comand/TestCommand.java,d\1\d19a012fd1a33e4fc223047549791671251c4b99
 s
 Csrc/main/java/com/example/cinema/web/controller/MainController.java,7\c\7c16ed21c1736b043921df54da12f706f4024429
 q
@@ -241,8 +239,6 @@ V
 &src/main/webapp/script/orderLimiter.js,1\5\154dfe7e2920996e83462bb22d6b227fc55c2c44
 S
 #src/main/webapp/style/adminFilm.css,b\9\b9949d44657c19ff94ec3aba0e83d52104decfb9
-I
-dataBaseConfig.properties,3\f\3fc0d8ac263efedfb77e59c6700aa161138c1108
 h
 8src/test/java/com/example/cinema/db/dao/UserDaoTest.java,5\a\5a0cefe357e0a59c5fdf4ce523e11920da8c4db2
 l
@@ -270,14 +266,8 @@ h
 :
 
 Cinema.iml,0\1\01f22275ed9c4b4a499c5e2fc89f966931cc8257
-j
-:.idea/libraries/Maven__org_mockito_mockito_all_1_10_19.xml,9\c\9cfa99a237cd45e04300a717186bf77f6939097c
 ^
 .src/main/webapp/WEB-INF/tags/slider-script.tag,7\4\746ef2bd365ae9979c088df2a3b5bb0fb6b39356
-r
-Bsrc/test/java/com/example/cinema/db/service/TicketServiceTest.java,1\8\183ca603bc692bc145b25e3ae13930c973d6297d
-s
-Csrc/test/java/com/example/cinema/db/service/SessionServiceTest.java,c\b\cb6c94aa02e12bc6ee1f04e8d3953ed0696b608f
 ^
 .src/main/webapp/WEB-INF/page/admin/addFilm.jsp,4\e\4ed6f076a76b0587c04bf7e5285c4810075783a5
 _
@@ -292,8 +282,6 @@ _
 README,6\9\69e27356ef629022720d868ab0c0e3394775b6c1
 U
 %src/main/webapp/WEB-INF/page/main.jsp,1\f\1fdd6478b926f7001fcbe8e18ad1757625071a63
-X
-(src/main/webapp/WEB-INF/page/logging.jsp,e\d\ed39ee8b78c47612895124f84209ea7eacf10211
 U
 %src/main/webapp/WEB-INF/page/menu.jsp,2\c\2cc5e18f5ca28af283bf2cbc16d96d23749e2c5c
 X
@@ -308,3 +296,15 @@ U
 -src/main/webapp/WEB-INF/page/orderReceipt.jsp,1\5\154c54468eb1e0157ed9ef23d66c435dec06550f
 T
 $src/main/webapp/WEB-INF/log/logs.log,9\e\9e42751203cd6c6b8b01bdf838f71e588b704882
+R
+"src/main/webapp/style/general_.css,3\8\38109af1ead0d85bdb69d7507764d8d83108f00a
+O
+src/main/webapp/style/menu_.css,2\b\2bb2cd79f0bdea69ff2507702cec9e7a5a3af3fe
+T
+$src/main/webapp/style/slider____.css,6\1\613f37559960f2d1ac5da808afca2822fb751dd2
+P
+ src/main/webapp/page/logging.jsp,8\9\899832d6ff8273e6420013ac3ec6230cf8c352dc
+N
+src/main/webapp/script/date.js,8\5\850c262ae7ab1a7d1aaa1dfb2533961667ca3d5d
+[
++src/main/webapp/script/filmEditingDates_.js,d\f\dff075aee7f7982a8fa82f7e1569b745be4c2430

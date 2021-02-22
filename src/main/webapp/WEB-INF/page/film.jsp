@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <title>Maxinema - ${film.getTitle()}</title>
-
+    <link rel="icon" href="${pageContext.request.contextPath}/image/logo/logo.ico">
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf" %>
     <link href="${pageContext.request.contextPath}/style/film.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/style/menu_.css" rel="stylesheet" type="text/css"/>

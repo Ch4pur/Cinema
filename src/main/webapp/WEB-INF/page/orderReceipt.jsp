@@ -4,6 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/logo/logo.ico">
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf" %>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/resultOrder.css"/>
     <c:set var="title" scope="page"><fmt:message key="receipt.title"/></c:set>

@@ -6,6 +6,7 @@
 
 <html>
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/logo/logo.ico">
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf" %>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/profile.css"/>
     <c:set var="title" scope="page"><fmt:message key="profile.title"/></c:set>

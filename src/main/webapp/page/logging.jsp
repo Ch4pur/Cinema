@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="${lang}">
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/logo/logo.ico">
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf"%>
     <link href="${pageContext.request.contextPath}/style/autho.css" rel="stylesheet" type="text/css"/>
     <c:set var="title" scope="page"><fmt:message key="logging.title"/></c:set>

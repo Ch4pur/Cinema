@@ -1,5 +1,6 @@
 
-j
-java:S1128"JRemove this unused import 'com.example.cinema.db.service.UserServiceImpl'.(Õ­¿¯ûÿÿÿÿ8òà²û.
-g
-java:S1128"LRemove this unused import 'com.example.cinema.db.service.iface.UserService'.(ıùü8òà²û.
+i
+java:S1128
+"LRemove this unused import 'com.example.cinema.db.service.iface.UserService'.(ıùü8òà²û.
+l
+java:S1128"JRemove this unused import 'com.example.cinema.db.service.UserServiceImpl'.(Õ­¿¯ûÿÿÿÿ8òà²û.

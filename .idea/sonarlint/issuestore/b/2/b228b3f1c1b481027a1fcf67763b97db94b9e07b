@@ -1,13 +1,22 @@
 
-u
-java:S1192N"XDefine a constant instead of duplicating this literal "Getting sessions starts" 3 times.(…¢‰œ8º‹ªü.
-s
-java:S1192C"QDefine a constant instead of duplicating this literal "Got sessions -> " 4 times.(îëúÿÿÿÿ8º‹ªü.
-q
-java:S1192G"TDefine a constant instead of duplicating this literal "Can`t get sessions " 4 times.(”¼Òæ8º‹ªü.
 …
 java:S11922"cDefine a constant instead of duplicating this literal "Getting sessions has been finished" 3 times.(Ó€³„øÿÿÿÿ8º‹ªü.
-v
-java:S2259¶"S"NullPointerException" will be thrown when invoking method "getEndTimeOfSession()".(äüƒ÷øÿÿÿÿ8º‹ªü.
+[	java:S106»"9Replace this use of System.out or System.err by a logger.(ÖÔ©•ûÿÿÿÿ8÷ØØ·ü.
+Y	java:S125"<This block of commented-out lines of code should be removed.(°’”¨8×ŒØ·ü.
+s
+java:S1192C"QDefine a constant instead of duplicating this literal "Got sessions -> " 4 times.(îëúÿÿÿÿ8º‹ªü.
 x
 java:S1450%"VRemove the "filmDao" field and declare it as a local variable in the relevant methods.(ÅÜâÖşÿÿÿÿ8º‹ªü.
+V	java:S106È"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8‡Ü·ü.
+q
+java:S2259×"S"NullPointerException" will be thrown when invoking method "getEndTimeOfSession()".(ÈªË¤8‡Ü·ü.
+v
+java:S1192»"SDefine a constant instead of duplicating this literal "session 1 time -> " 3 times.(ÖÔ©•ûÿÿÿÿ8½‘Ù·ü.
+q
+java:S1192G"TDefine a constant instead of duplicating this literal "Can`t get sessions " 4 times.(”¼Òæ8º‹ªü.
+Y	java:S125"<This block of commented-out lines of code should be removed.(ìªÁÔ8×ŒØ·ü.
+u
+java:S1192N"XDefine a constant instead of duplicating this literal "Getting sessions starts" 3 times.(…¢‰œ8º‹ªü.
+V	java:S106¼"9Replace this use of System.out or System.err by a logger.(âúÁá8÷ØØ·ü.
+r
+java:S1192¼"TDefine a constant instead of duplicating this literal "newSessions time ->" 3 times.(âúÁá8ÇÈÙ·ü.

@@ -4,6 +4,7 @@
 
 <html>
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/logo/logo.ico">
     <c:set var="title" scope="page"><fmt:message key="ticketOrder.title"/> ${session.getFilm().getTitle()}</c:set>
     <title>Maxinema - ${title}</title>
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf" %>

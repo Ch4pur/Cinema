@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="${lang}">
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/logo/logo.ico">
     <c:set var="title" scope="page"><fmt:message key="main.title"/></c:set>
     <title>Maxinema - ${title}</title>
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf" %>

@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/logo/logo.ico">
     <c:set var="title" scope="page"><fmt:message key="registration.title"/></c:set>
     <title>Maxinema - ${title}</title>
     <%@include file="/WEB-INF/page/jspf/directive/mainStyles.jspf"%>
